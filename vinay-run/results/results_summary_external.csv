@@ -1,0 +1,3 @@
+run,dataset,mapping,n_total,n_pm,n_nonpm,accuracy,precision,recall,f1,roc_auc,avg_precision,TP,TN,FP,FN
+run_C_clean,PALM,conservative,400,213,187,0.815,1.0,0.6526,0.7898,0.9885,0.9918,139,187,0,74
+run_C_clean,PALM,inclusive,400,239,161,0.75,1.0,0.5816,0.7354,0.9578,0.9773,139,161,0,100

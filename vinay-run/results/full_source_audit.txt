@@ -1,0 +1,151 @@
+FULL SOURCE AUDIT — /Users/vinayvinod/Desktop/IRIS/IMAGES
+============================================================
+Total images scanned: 124794
+  Myopia   63294
+  Normal   61500
+Extensions: {'.png': 108046, '.jpg': 16748}
+
+[1] EXACT BYTE DUPLICATES (MD5)
+------------------------------------------------------------
+MD5 duplicate groups: 8795
+  Duplicate images beyond first representative: 8795
+  Same-class duplicate groups: 8795
+  Cross-class duplicate groups / label conflicts: 0
+  Groups by involved class:
+    Myopia          8795
+  Extra duplicate images by class:
+    Myopia          8795
+
+  Example MD5 duplicate groups:
+    Myopia/myopia25983.png | Myopia/myopia47075.png
+    Myopia/myopia25984.jpg | Myopia/myopia47076.jpg
+    Myopia/myopia25985.png | Myopia/myopia47077.png
+    Myopia/myopia25986.jpg | Myopia/myopia47078.jpg
+    Myopia/myopia25987.png | Myopia/myopia47079.png
+    Myopia/myopia25988.jpg | Myopia/myopia47081.jpg
+    Myopia/myopia25989.png | Myopia/myopia47082.png
+    Myopia/myopia25990.jpg | Myopia/myopia47083.jpg
+    Myopia/myopia25992.png | Myopia/myopia47084.png
+    Myopia/myopia25994.jpg | Myopia/myopia47085.jpg
+    Myopia/myopia25996.png | Myopia/myopia47086.png
+    Myopia/myopia25997.jpg | Myopia/myopia47087.jpg
+    Myopia/myopia25998.png | Myopia/myopia47088.png
+    Myopia/myopia25999.jpg | Myopia/myopia47089.jpg
+    Myopia/myopia26000.png | Myopia/myopia47090.png
+    Myopia/myopia26001.jpg | Myopia/myopia47092.jpg
+    Myopia/myopia26004.png | Myopia/myopia47093.png
+    Myopia/myopia26005.jpg | Myopia/myopia47094.jpg
+    Myopia/myopia26007.png | Myopia/myopia47095.png
+    Myopia/myopia26008.jpg | Myopia/myopia47096.jpg
+    Myopia/myopia26010.png | Myopia/myopia47097.png
+    Myopia/myopia26011.jpg | Myopia/myopia47098.jpg
+    Myopia/myopia26012.png | Myopia/myopia47099.png
+    Myopia/myopia26013.jpg | Myopia/myopia47100.jpg
+    Myopia/myopia26015.png | Myopia/myopia47101.png
+    ... and 8770 more groups
+
+MD5 filename-number gap summary
+------------------------------------------------------------
+  Myopia   gap=20931    pairs=13     examples: myopia26833.jpg <-> myopia47764.jpg; myopia26834.png <-> myopia47765.png; myopia26835.jpg <-> myopia47766.jpg
+  Myopia   gap=20411    pairs=11     examples: myopia29574.png <-> myopia49985.png; myopia29575.jpg <-> myopia49986.jpg; myopia29576.png <-> myopia49987.png
+  Myopia   gap=21000    pairs=10     examples: myopia26475.png <-> myopia47475.png; myopia26476.jpg <-> myopia47476.jpg; myopia26477.png <-> myopia47477.png
+  Myopia   gap=20789    pairs=10     examples: myopia27586.png <-> myopia48375.png; myopia27587.jpg <-> myopia48376.jpg; myopia27588.png <-> myopia48377.png
+  Myopia   gap=20155    pairs=10     examples: myopia30919.png <-> myopia51074.png; myopia30920.jpg <-> myopia51075.jpg; myopia30921.png <-> myopia51076.png
+  Myopia   gap=20148    pairs=10     examples: myopia30959.png <-> myopia51107.png; myopia30960.jpg <-> myopia51108.jpg; myopia30961.png <-> myopia51109.png
+  Myopia   gap=17032    pairs=10     examples: myopia35153.png <-> myopia52185.png; myopia35154.jpg <-> myopia52186.jpg; myopia35155.png <-> myopia52187.png
+  Myopia   gap=17023    pairs=10     examples: myopia35195.png <-> myopia52218.png; myopia35196.jpg <-> myopia52219.jpg; myopia35197.png <-> myopia52220.png
+  Myopia   gap=16821    pairs=10     examples: myopia36264.png <-> myopia53085.png; myopia36265.jpg <-> myopia53086.jpg; myopia36266.png <-> myopia53087.png
+  Myopia   gap=16762    pairs=10     examples: myopia36570.jpg <-> myopia53332.jpg; myopia36571.png <-> myopia53333.png; myopia36581.jpg <-> myopia53343.jpg
+  Myopia   gap=16610    pairs=10     examples: myopia37375.png <-> myopia53985.png; myopia37376.jpg <-> myopia53986.jpg; myopia37377.png <-> myopia53987.png
+  Myopia   gap=15981    pairs=10     examples: myopia40684.png <-> myopia56665.png; myopia40685.jpg <-> myopia56666.jpg; myopia40686.png <-> myopia56667.png
+  Myopia   gap=15979    pairs=10     examples: myopia40708.png <-> myopia56687.png; myopia40709.jpg <-> myopia56688.jpg; myopia40710.png <-> myopia56689.png
+  Myopia   gap=21083    pairs=9      examples: myopia26037.png <-> myopia47120.png; myopia26038.jpg <-> myopia47121.jpg; myopia26039.png <-> myopia47122.png
+  Myopia   gap=21044    pairs=9      examples: myopia26242.png <-> myopia47286.png; myopia26243.jpg <-> myopia47287.jpg; myopia26244.png <-> myopia47288.png
+  Myopia   gap=21023    pairs=9      examples: myopia26352.png <-> myopia47375.png; myopia26353.jpg <-> myopia47376.jpg; myopia26354.png <-> myopia47377.png
+  Myopia   gap=20977    pairs=9      examples: myopia26598.png <-> myopia47575.png; myopia26599.jpg <-> myopia47576.jpg; myopia26600.png <-> myopia47577.png
+  Myopia   gap=20812    pairs=9      examples: myopia27463.png <-> myopia48275.png; myopia27464.jpg <-> myopia48276.jpg; myopia27465.png <-> myopia48277.png
+  Myopia   gap=20766    pairs=9      examples: myopia27709.png <-> myopia48475.png; myopia27710.jpg <-> myopia48476.jpg; myopia27711.png <-> myopia48477.png
+  Myopia   gap=20744    pairs=9      examples: myopia27821.jpg <-> myopia48565.jpg; myopia27822.png <-> myopia48566.png; myopia27823.jpg <-> myopia48567.jpg
+
+[2] PERCEPTUALLY IDENTICAL IMAGES (dHash distance == 0)
+------------------------------------------------------------
+dHash=0 duplicate groups: 16874
+  Duplicate images beyond first representative: 33810
+  Same-class duplicate groups: 16856
+  Cross-class duplicate groups / label conflicts: 18
+  Groups by involved class:
+    Myopia          13770
+    Normal          3086
+    Myopia+Normal   18
+  Extra duplicate images by class:
+    Myopia          30078
+    Normal          3732
+
+  Example dHash=0 duplicate groups:
+    Myopia/myopia1.png | Myopia/myopia14124.png | Myopia/myopia19538.png | Myopia/myopia22085.png | Myopia/myopia34038.png | Myopia/myopia38746.png | Myopia/myopia40233.png | Myopia/myopia42367.png
+    Myopia/myopia1000.png | Myopia/myopia42157.png | Myopia/myopia44821.png | Myopia/myopia61776.png
+    Myopia/myopia10000.png | Myopia/myopia31522.png
+    Myopia/myopia10001.png | Myopia/myopia4611.png
+    Myopia/myopia10002.png | Myopia/myopia1727.png | Myopia/myopia17932.png | Myopia/myopia20585.png | Myopia/myopia22704.png | Myopia/myopia23261.png | Myopia/myopia26187.png | Myopia/myopia2621.png
+    Myopia/myopia10003.png | Myopia/myopia12531.png | Myopia/myopia21588.png | Myopia/myopia22880.png | Myopia/myopia26757.png | Myopia/myopia29506.png | Myopia/myopia32941.png | Myopia/myopia3413.png
+    Myopia/myopia10004.png | Myopia/myopia17365.png | Myopia/myopia26620.png | Myopia/myopia27459.png | Myopia/myopia35779.png | Myopia/myopia43917.png | Myopia/myopia47595.png | Myopia/myopia48273.png
+    Myopia/myopia10005.png | Myopia/myopia11241.png | Myopia/myopia13388.png | Myopia/myopia29912.png | Myopia/myopia50262.png
+    Myopia/myopia10006.png | Myopia/myopia10657.png | Myopia/myopia11739.png | Myopia/myopia12380.png | Myopia/myopia15283.png | Myopia/myopia15732.png | Myopia/myopia166.png | Myopia/myopia16834.png
+    Myopia/myopia10008.png | Myopia/myopia3217.png | Myopia/myopia43507.png
+    Myopia/myopia10009.png | Myopia/myopia43435.png
+    Myopia/myopia1001.png | Myopia/myopia12261.png | Myopia/myopia29217.png | Myopia/myopia43617.png | Myopia/myopia49697.png | Myopia/myopia58299.png
+    Myopia/myopia10011.png | Myopia/myopia29293.jpg | Myopia/myopia31855.png | Myopia/myopia47062.png | Myopia/myopia49758.jpg
+    Myopia/myopia10014.png | Myopia/myopia16219.png | Myopia/myopia36874.png | Myopia/myopia53582.png | Myopia/myopia851.png
+    Myopia/myopia10015.png | Myopia/myopia12001.png
+    Myopia/myopia10016.png | Myopia/myopia14985.png | Myopia/myopia16556.png | Myopia/myopia21828.png | Myopia/myopia23141.png | Myopia/myopia24236.png | Myopia/myopia2458.png | Myopia/myopia2846.png
+    Myopia/myopia10017.png | Myopia/myopia30826.png | Myopia/myopia35108.png | Myopia/myopia51000.png | Myopia/myopia52150.png
+    Myopia/myopia1002.png | Myopia/myopia22587.png
+    Myopia/myopia10022.png | Myopia/myopia12177.png | Myopia/myopia15847.png | Myopia/myopia30775.png | Myopia/myopia37509.png | Myopia/myopia41283.png | Myopia/myopia44077.png | Myopia/myopia45536.png
+    Myopia/myopia10024.png | Myopia/myopia7357.png
+    Myopia/myopia10025.png | Myopia/myopia28468.png | Myopia/myopia43776.png | Myopia/myopia49090.png | Myopia/myopia57371.png | Myopia/myopia63251.png | Myopia/myopia7771.png
+    Myopia/myopia10027.png | Myopia/myopia12679.png | Myopia/myopia17.png | Myopia/myopia30982.png | Myopia/myopia50335.png | Myopia/myopia51129.png
+    Myopia/myopia10029.png | Myopia/myopia45328.png | Myopia/myopia6997.png | Myopia/myopia8134.png
+    Myopia/myopia10030.png | Myopia/myopia15.png | Myopia/myopia19031.png | Myopia/myopia33663.png | Myopia/myopia36352.png | Myopia/myopia53156.png
+    Myopia/myopia10031.png | Myopia/myopia11160.png | Myopia/myopia15139.png | Myopia/myopia18273.png | Myopia/myopia19534.png | Myopia/myopia23402.png | Myopia/myopia25842.png | Myopia/myopia3007.png
+    ... and 16849 more groups
+
+dHash=0 filename-number gap summary
+------------------------------------------------------------
+  Myopia   gap=16242    pairs=19     examples: myopia42942.png <-> myopia59184.png; myopia10168.png <-> myopia26410.png; myopia365.png <-> myopia16607.png
+  Myopia   gap=16034    pairs=19     examples: myopia8578.png <-> myopia24612.png; myopia40409.png <-> myopia56443.png; myopia40415.png <-> myopia56449.png
+  Myopia   gap=16377    pairs=17     examples: myopia34269.png <-> myopia50646.png; myopia42422.png <-> myopia58799.png; myopia20971.png <-> myopia37348.png
+  Myopia   gap=16213    pairs=17     examples: myopia6968.png <-> myopia23181.png; myopia42321.png <-> myopia58534.png; myopia41524.png <-> myopia57737.png
+  Myopia   gap=15979    pairs=16     examples: myopia4857.png <-> myopia20836.png; myopia24115.png <-> myopia40094.png; myopia38413.png <-> myopia54392.png
+  Myopia   gap=20555    pairs=16     examples: myopia28829.png <-> myopia49384.png; myopia773.png <-> myopia21328.png; myopia23377.png <-> myopia43932.png
+  Myopia   gap=16989    pairs=16     examples: myopia4531.png <-> myopia21520.png; myopia35390.png <-> myopia52379.png; myopia4270.png <-> myopia21259.png
+  Myopia   gap=20411    pairs=16     examples: myopia36636.png <-> myopia57047.png; myopia10338.png <-> myopia30749.png; myopia29583.png <-> myopia49994.png
+  Myopia   gap=16692    pairs=16     examples: myopia39703.png <-> myopia56395.png; myopia19156.png <-> myopia35848.png; myopia36953.png <-> myopia53645.png
+  Myopia   gap=20744    pairs=16     examples: myopia41695.png <-> myopia62439.png; myopia37136.png <-> myopia57880.png; myopia4706.png <-> myopia25450.png
+  Myopia   gap=15981    pairs=16     examples: myopia11719.png <-> myopia27700.png; myopia10923.png <-> myopia26904.png; myopia41922.png <-> myopia57903.png
+  Myopia   gap=20643    pairs=15     examples: myopia10006.png <-> myopia30649.png; myopia25262.png <-> myopia45905.png; myopia5427.png <-> myopia26070.png
+  Myopia   gap=16708    pairs=15     examples: myopia36874.png <-> myopia53582.png; myopia19471.png <-> myopia36179.png; myopia29053.png <-> myopia45761.png
+  Myopia   gap=20740    pairs=15     examples: myopia7361.png <-> myopia28101.png; myopia26114.png <-> myopia46854.png; myopia1009.png <-> myopia21749.png
+  Myopia   gap=20953    pairs=15     examples: myopia4581.png <-> myopia25534.png; myopia39721.png <-> myopia60674.png; myopia26729.png <-> myopia47682.png
+  Myopia   gap=16249    pairs=15     examples: myopia4270.png <-> myopia20519.png; myopia10421.png <-> myopia26670.png; myopia28988.png <-> myopia45237.png
+  Myopia   gap=20409    pairs=15     examples: myopia16970.png <-> myopia37379.png; myopia24828.png <-> myopia45237.png; myopia22639.png <-> myopia43048.png
+  Myopia   gap=20931    pairs=15     examples: myopia25262.png <-> myopia46193.png; myopia26854.png <-> myopia47785.png; myopia39373.png <-> myopia60304.png
+  Myopia   gap=20699    pairs=15     examples: myopia15045.png <-> myopia35744.png; myopia21328.png <-> myopia42027.png; myopia32798.png <-> myopia53497.png
+  Myopia   gap=20878    pairs=14     examples: myopia22704.png <-> myopia43582.png; myopia3950.png <-> myopia24828.png; myopia3502.png <-> myopia24380.png
+
+Sampled nearest-neighbor calibration (sample_n=750, seed=42)
+------------------------------------------------------------
+  Source class = Myopia (n=750)
+    closest SAME class:  median=0.0 mean=0.73 <=0:495 <=2:704 <=5:729
+    closest OTHER class: median=5.0 mean=5.33 <=0:0 <=2:67 <=5:446
+  Source class = Normal (n=750)
+    closest SAME class:  median=2.0 mean=2.23 <=0:75 <=2:527 <=5:697
+    closest OTHER class: median=12.0 mean=11.66 <=0:0 <=2:10 <=5:41
+
+INTERPRETATION
+------------------------------------------------------------
+MD5 groups are byte-for-byte duplicate source files.
+dHash=0 groups are visually/perceptually identical, even if bytes differ.
+Cross-class groups would be label conflicts; same-class groups still matter
+because random splitting can place duplicates in train and test.
+Without patient IDs, this still cannot rule out left/right-eye or repeat-visit
+same-patient leakage.

@@ -1,0 +1,15 @@
+# External datasets (download separately; PALM is a nested git clone from HF)
+PALM/
+
+# Generated image splits (~1GB total; rebuild with 1_sample_data*.py)
+data_10k/
+data_10k_clean/
+data_10k_clahe/
+
+# Base pretrained checkpoint (auto-downloaded by ultralytics)
+yolov8s-cls.pt
+
+# Python / OS noise
+__pycache__/
+.mplconfig/
+.DS_Store

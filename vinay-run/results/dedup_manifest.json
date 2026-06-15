@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "test_ratio": 0.15,
+  "requested_n_per_class": 5000,
+  "classes": {
+    "Myopia": {
+      "source_images": 63294,
+      "bad_images": 0,
+      "clusters": 33216,
+      "representatives": 33216,
+      "removed_duplicates": 30078,
+      "largest_cluster_size": 123,
+      "bad_image_examples": [],
+      "sampled": 5000,
+      "split_counts": {
+        "train": 3500,
+        "validation": 750,
+        "test": 750
+      }
+    },
+    "Normal": {
+      "source_images": 61500,
+      "bad_images": 0,
+      "clusters": 57786,
+      "representatives": 57786,
+      "removed_duplicates": 3714,
+      "largest_cluster_size": 12,
+      "bad_image_examples": [],
+      "sampled": 5000,
+      "split_counts": {
+        "train": 3500,
+        "validation": 750,
+        "test": 750
+      }
+    }
+  },
+  "output_dir": "data_10k_clean",
+  "total_copied": 10000
+}
