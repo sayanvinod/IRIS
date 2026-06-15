@@ -1,0 +1,34 @@
+[
+  {
+    "mapping": "conservative",
+    "n_total": 400,
+    "n_pm": 213,
+    "n_nonpm": 187,
+    "accuracy": 0.815,
+    "precision": 1.0,
+    "recall": 0.6526,
+    "f1": 0.7898,
+    "roc_auc": 0.9885,
+    "avg_precision": 0.9918,
+    "TP": 139,
+    "TN": 187,
+    "FP": 0,
+    "FN": 74
+  },
+  {
+    "mapping": "inclusive",
+    "n_total": 400,
+    "n_pm": 239,
+    "n_nonpm": 161,
+    "accuracy": 0.75,
+    "precision": 1.0,
+    "recall": 0.5816,
+    "f1": 0.7354,
+    "roc_auc": 0.9578,
+    "avg_precision": 0.9773,
+    "TP": 139,
+    "TN": 161,
+    "FP": 0,
+    "FN": 100
+  }
+]

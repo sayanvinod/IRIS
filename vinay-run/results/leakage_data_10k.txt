@@ -1,0 +1,92 @@
+LEAKAGE AUDIT — data_10k
+============================================================
+Total images scanned: 10000
+  test         Myopia     750
+  test         Normal     750
+  train        Myopia     3500
+  train        Normal     3500
+  validation   Myopia     750
+  validation   Normal     750
+
+[1] EXACT CONTENT DUPLICATES (MD5 over raw bytes)
+------------------------------------------------------------
+Total exact-duplicate groups (>=2 identical images): 51
+  ...of which span MORE THAN ONE SPLIT (LEAKAGE): 27
+  ...of which span MORE THAN ONE CLASS (label issue): 0
+  LEAK exact: train/Myopia/myopia26354.png | validation/Myopia/myopia47377.png
+  LEAK exact: train/Myopia/myopia27010.jpg | validation/Myopia/myopia47910.jpg
+  LEAK exact: train/Myopia/myopia27023.jpg | test/Myopia/myopia47921.jpg
+  LEAK exact: train/Myopia/myopia27134.png | test/Myopia/myopia48011.png
+  LEAK exact: train/Myopia/myopia27920.jpg | test/Myopia/myopia48644.jpg
+  LEAK exact: train/Myopia/myopia30306.png | validation/Myopia/myopia50579.png
+  LEAK exact: train/Myopia/myopia32042.png | validation/Myopia/myopia51985.png
+  LEAK exact: train/Myopia/myopia40401.jpg | test/Myopia/myopia56438.jpg
+  LEAK exact: train/Myopia/myopia47340.png | test/Myopia/myopia26307.png
+  LEAK exact: train/Myopia/myopia47637.png | validation/Myopia/myopia26676.png
+  LEAK exact: train/Myopia/myopia49426.png | validation/Myopia/myopia28882.png
+  LEAK exact: train/Myopia/myopia49508.png | validation/Myopia/myopia28984.png
+  LEAK exact: train/Myopia/myopia49544.jpg | test/Myopia/myopia29031.jpg
+  LEAK exact: train/Myopia/myopia50188.png | validation/Myopia/myopia29823.png
+  LEAK exact: train/Myopia/myopia51364.png | test/Myopia/myopia31274.png
+  LEAK exact: train/Myopia/myopia52165.png | validation/Myopia/myopia35129.png
+  LEAK exact: train/Myopia/myopia52325.jpg | validation/Myopia/myopia35322.jpg
+  LEAK exact: train/Myopia/myopia52717.png | validation/Myopia/myopia35810.png
+  LEAK exact: train/Myopia/myopia52777.jpg | test/Myopia/myopia35885.jpg
+  LEAK exact: train/Myopia/myopia53305.png | validation/Myopia/myopia36532.png
+  LEAK exact: train/Myopia/myopia53708.png | validation/Myopia/myopia37032.png
+  LEAK exact: validation/Myopia/myopia34990.png | test/Myopia/myopia52054.png
+  LEAK exact: validation/Myopia/myopia35195.png | test/Myopia/myopia52218.png
+  LEAK exact: validation/Myopia/myopia38985.png | test/Myopia/myopia55289.png
+  LEAK exact: validation/Myopia/myopia52540.jpg | test/Myopia/myopia35589.jpg
+  ... and 2 more cross-split exact groups
+
+[2] NEAR DUPLICATES (dHash, Hamming <= 5)
+------------------------------------------------------------
+Computing perceptual hashes...
+Test images: 1500   |   Train+Val images: 8500
+Test images with >=1 near-duplicate in train/val: 1217 (81.13% of test)
+Near-duplicate pairs found (Hamming <= 5): 48026
+  ...of which Hamming == 0 (perceptually identical): 245
+
+Closest matches (test  <->  train/val):
+  dist=0  TEST Myopia/myopia10016.png   ~=   train Myopia/myopia6956.png
+  dist=0  TEST Myopia/myopia10016.png   ~=   validation Myopia/myopia21828.png
+  dist=0  TEST Myopia/myopia10161.png   ~=   train Myopia/myopia7430.png
+  dist=0  TEST Myopia/myopia10354.png   ~=   train Myopia/myopia24696.png
+  dist=0  TEST Myopia/myopia10416.png   ~=   validation Myopia/myopia19946.png
+  dist=0  TEST Myopia/myopia11269.png   ~=   train Myopia/myopia7596.png
+  dist=0  TEST Myopia/myopia11318.png   ~=   train Myopia/myopia13401.png
+  dist=0  TEST Myopia/myopia11318.png   ~=   train Myopia/myopia13543.png
+  dist=0  TEST Myopia/myopia11438.png   ~=   validation Myopia/myopia26018.png
+  dist=0  TEST Myopia/myopia11842.png   ~=   train Myopia/myopia35916.png
+  dist=0  TEST Myopia/myopia11875.png   ~=   train Myopia/myopia25554.png
+  dist=0  TEST Myopia/myopia12232.png   ~=   train Myopia/myopia28313.png
+  dist=0  TEST Myopia/myopia12232.png   ~=   train Myopia/myopia50573.png
+  dist=0  TEST Myopia/myopia12679.png   ~=   train Myopia/myopia50335.png
+  dist=0  TEST Myopia/myopia12685.png   ~=   train Myopia/myopia24046.png
+  dist=0  TEST Myopia/myopia12685.png   ~=   train Myopia/myopia534.png
+  dist=0  TEST Myopia/myopia12685.png   ~=   validation Myopia/myopia20120.png
+  dist=0  TEST Myopia/myopia12808.png   ~=   train Myopia/myopia14197.png
+  dist=0  TEST Myopia/myopia12808.png   ~=   train Myopia/myopia21769.png
+  dist=0  TEST Myopia/myopia13109.png   ~=   train Myopia/myopia33199.png
+  dist=0  TEST Myopia/myopia13125.png   ~=   train Myopia/myopia19035.png
+  dist=0  TEST Myopia/myopia13125.png   ~=   train Myopia/myopia25684.png
+  dist=0  TEST Myopia/myopia13125.png   ~=   train Myopia/myopia35922.png
+  dist=0  TEST Myopia/myopia13125.png   ~=   train Myopia/myopia37671.png
+  dist=0  TEST Myopia/myopia13552.png   ~=   train Myopia/myopia15745.png
+  dist=0  TEST Myopia/myopia13552.png   ~=   train Myopia/myopia29770.png
+  dist=0  TEST Myopia/myopia13552.png   ~=   validation Myopia/myopia40034.png
+  dist=0  TEST Myopia/myopia13618.png   ~=   train Myopia/myopia19999.png
+  dist=0  TEST Myopia/myopia13618.png   ~=   train Myopia/myopia38894.png
+  dist=0  TEST Myopia/myopia13618.png   ~=   train Myopia/myopia60928.png
+  ... and 47996 more pairs
+
+VERDICT
+------------------------------------------------------------
+ATTENTION — 27 exact cross-split dup group(s); 1217 test image(s) with near-dupes in train/val.
+       Review the pairs above. Note: this cannot detect SAME-PATIENT
+       leakage (e.g. left/right eye, repeat visits) without metadata.
+
+LIMITATION: filename- and pixel-based audits cannot rule out same-patient
+leakage when the dataset ships no patient IDs. Treat that as an external-
+validity caveat, not something this script can resolve.
