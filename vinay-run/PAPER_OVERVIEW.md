@@ -9,7 +9,7 @@
 
 ## The One-Paragraph Story
 
-We set out to improve a weak automated myopia detector (68% accuracy) by fixing its methodology. We fixed the sampling, increased resolution, and re-ran the model — and got 99.7% accuracy. Then we investigated whether that jump was real. It wasn't entirely: the source dataset contained thousands of byte-identical duplicate images, which random splitting placed across train and test. After auditing and removing those duplicates, the clean rerun gave 99.5% — still strong, but with an honest 6 missed myopia cases instead of zero. We then validated the clean model on a completely independent dataset from Chinese ophthalmic centers (PALM), achieving 81.5% accuracy and 100% precision on an unseen, harder-labeled population. Across all this, Grad-CAM confirms the model attends to retinal anatomy, not image brightness, and a CLAHE ablation confirms brightness alone cannot explain the results. The paper's contribution is therefore methodological as much as empirical: we demonstrate what rigorous ML practice looks like on a noisy public medical dataset.
+We set out to improve a weak automated myopia detector (68% accuracy) by fixing its methodology. We fixed the sampling, increased resolution, and re-ran the model — and got 99.7% accuracy. Then we investigated whether that jump was real. It wasn't entirely: the source dataset contained thousands of byte-identical duplicate images, which random splitting placed across train and test. After auditing and removing those duplicates, the clean rerun gave 99.5% — still strong, but with an honest 6 missed myopia cases instead of zero. We then validated the clean model on a completely independent dataset from Chinese ophthalmic centers (PALM), achieving 81.5% accuracy and 100% precision on an unseen, harder-labeled population. Across all this, Grad-CAM confirms the model attends to retinal anatomy, not image brightness, and a CLAHE ablation confirms brightness alone cannot explain the results. Finally, we deployed `run_C_clean` as a fully offline iOS screening app (Core ML + Vision), achieving 7.1 ms model-only and 23 ms end-to-end inference on an iPhone 16 with zero network traffic and Nominal thermal state across consecutive screenings. The paper's contribution is therefore methodological as much as empirical: we demonstrate what rigorous ML practice looks like on a noisy public medical dataset, and how that honest model behaves in a real clinical mobile deployment.
 
 ---
 
@@ -141,6 +141,61 @@ The honest clinical recall is **99.2%** with **6 missed myopia cases**, not 100%
 - **Recall drops (~65%)** — expected: PALM's positive class is *pathologic* myopia (severe structural lesions not present in Kaggle training). The model learned general myopia features, not pathology-specific lesion signatures.
 - **No false positives** — the model is not over-triggering on the new domain.
 
+### Phase 5 — Mobile deployment (iOS app)
+
+**Model:** `run_C_clean/weights/best.pt` exported to Core ML (`best.mlpackage`, 9.7 MB, Float16).  
+**App:** Myopia Detection (SwiftUI + Vision + CoreML), deployed on iPhone 16 (iOS 26, Apple A18).  
+**Benchmark evidence:** `frontend/sayan_benchmarks/`
+
+**Export pipeline:**
+```bash
+# Python 3.11 venv required (coremltools fails on Python 3.14)
+yolo export model=runs/classify/run_C_clean/weights/best.pt format=coreml imgsz=224
+```
+
+**App architecture:**
+- `ImageClassifier.swift` — loads `best.mlpackage`, runs `VNCoreMLRequest` with `.centerCrop`
+- `CameraView.swift` — alignment circle overlay, center-crop preprocessing (`centerCropScale=0.44`), capture + upload
+- Fully offline — no network calls in inference pipeline
+
+**Latency benchmarks (iPhone 16, iOS 26):**
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Model-only inference (median) | **7.1 ms** | Xcode Core ML Performance Report (n=119) |
+| Model-only inference (mean ± SD) | **5.5 ± 4.1 ms** | Xcode Core ML Performance Report |
+| End-to-end Vision pipeline (median) | **22.96 ms** | In-app benchmark, compute unit All (n=50) |
+| End-to-end Vision pipeline (mean ± SD) | **24.86 ± 7.72 ms** | In-app benchmark, compute unit All (n=50) |
+| Vision preprocessing overhead | **~16 ms** | Difference between model-only and end-to-end |
+| Model package size | **9.7 MB** | `best.mlpackage` on disk |
+| Storage precision | **Float16** | Core ML ML Program format |
+
+**Compute unit comparison (end-to-end, n=50 each):**
+
+| Config | Median | Mean ± SD |
+|--------|--------|-----------|
+| All | 22.96 ms | 24.86 ± 7.72 ms |
+| CPU + Neural Engine | 23.13 ms | 24.00 ± 2.61 ms |
+| CPU only | 23.73 ms | 23.78 ± 0.68 ms |
+
+Vision preprocessing overhead dominates; ANE speedup is negligible for this model size on A18 silicon.
+
+**Power & thermal profiling (Instruments Power Profiler, 10 consecutive inferences):**
+
+| Metric | Value |
+|--------|-------|
+| Session duration | 87.2 s (1.45 min) |
+| Thermal state | **Nominal** (entire session) |
+| Avg power drain | **0.0%/hr** |
+| App network bytes TX/RX | **0 / 0** |
+| CPU activity pattern | Discrete bursts per inference, return to baseline |
+
+**Interpretation:**
+- **Sub-25 ms end-to-end latency** satisfies real-time screening requirements.
+- **Zero app network traffic** confirms fully on-device inference — no patient data leaves the device.
+- **Nominal thermal state** across 10 consecutive screenings — safe for sustained clinical use.
+- **Alignment UI** (circle overlay + programmatic center crop) assists non-professional operators in centering the 20D condensing lens relative to the camera axis.
+
 ---
 
 ## Scientific Conclusions
@@ -156,6 +211,8 @@ The honest clinical recall is **99.2%** with **6 missed myopia cases**, not 100%
 5. **Cross-dataset generalization is preliminary but encouraging.** On PALM (independent Chinese clinical dataset, different label definition), AUC stays above 0.96 and precision is perfect. Recall drops, which is scientifically honest and explicable by label scope.
 
 6. **Threshold matters clinically.** Default threshold 0.5 gives 6 FN on the clean test. Threshold 0.15 gives 0 FN — full recall — at minimal precision cost. For a screening tool, this is the operating point to deploy.
+
+7. **The model deploys practically on consumer hardware.** Core ML export of `run_C_clean` achieves 7.1 ms model-only and 23 ms end-to-end inference on iPhone 16. Instruments profiling confirms Nominal thermal state, zero network traffic, and discrete (not sustained) CPU bursts — validating offline deployment for rural screening without cloud infrastructure.
 
 ---
 
@@ -224,7 +281,17 @@ vinay-run/
     ├── leakage_data_10k_clean.txt      clean split audit (PASS)
     ├── palm_external_validation.json   PALM metrics both mappings
     └── dedup_manifest.json             dedup cluster stats
+
+frontend/sayan_benchmarks/               iOS deployment benchmarks
+    ├── best-all-Sayan's iPhone.mlperf   Xcode model-only perf report
+    ├── power-profiler-run2.trace        Instruments power/thermal trace
+    └── inapp_benchmark_results.json     all latency + power numbers
 ```
+
+**iOS app (separate repo):** `MyopiaDetection/Myopia Detection/`
+- `best.mlpackage` — deployed Core ML model
+- `ImageClassifier.swift` — Vision inference
+- `CameraView.swift` — alignment UI + capture pipeline
 
 ---
 
@@ -242,6 +309,9 @@ vinay-run/
 | Brightness ablation | ✅ | `run_E` CLAHE (no accuracy drop) |
 | Threshold optimization | ✅ | `figures/run_C_clean/threshold_sweep.png` |
 | External validation | ✅ | PALM, 400 images, AUC 0.99, 0 FP |
+| Mobile deployment | ✅ | iOS app, Core ML, 23 ms end-to-end, 0 network bytes |
+| On-device benchmarks | ✅ | `frontend/sayan_benchmarks/inapp_benchmark_results.json` |
+| Power/thermal profiling | ✅ | Instruments Power Profiler, Nominal thermal, 0.0%/hr |
 | Same-patient leakage | ⚠️ | Acknowledged in Limitations — cannot fix (no patient IDs) |
 | Multi-dataset training | ✗ | Out of scope |
 
@@ -262,3 +332,8 @@ vinay-run/
 | PALM external precision | **100%** |
 | PALM external AUC | **0.9885** |
 | PALM external FP | **0** |
+| Core ML model size | **9.7 MB** (Float16) |
+| Model-only inference (iPhone 16) | **7.1 ms** median |
+| End-to-end inference (iPhone 16) | **22.96 ms** median, **24.86 ± 7.72 ms** mean ± SD |
+| Thermal state (10 screenings) | **Nominal** |
+| App network traffic | **0 bytes** |

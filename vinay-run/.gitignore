@@ -13,3 +13,4 @@ yolov8s-cls.pt
 __pycache__/
 .mplconfig/
 .DS_Store
+.venv-coreml/
